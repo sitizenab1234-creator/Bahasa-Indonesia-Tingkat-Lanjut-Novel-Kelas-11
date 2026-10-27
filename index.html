@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MPI Novel – Bahasa Indonesia Tingkat Lanjut</title>
+<style>
+:root{--bg:#f6f1fc;--card:#fff;--tx:#2a1b3d;--mut:#6b5a82;--p:#6d28d9;--p2:#a78bfa;--soft:#ede4fb;--ok:#15803d;--okb:#dcfce7;--no:#b91c1c;--nob:#fee2e2;--bd:#d9c9f3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1226;--card:#251937;--tx:#f1e9fb;--mut:#b9a8d3;--p:#a78bfa;--p2:#7c3aed;--soft:#32224a;--ok:#86efac;--okb:#14352240;--no:#fca5a5;--nob:#4a1d1d80;--bd:#44305f}}
+:root[data-theme="dark"]{--bg:#1a1226;--card:#251937;--tx:#f1e9fb;--mut:#b9a8d3;--p:#a78bfa;--p2:#7c3aed;--soft:#32224a;--ok:#86efac;--okb:#14352240;--no:#fca5a5;--nob:#4a1d1d80;--bd:#44305f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Georgia,'Segoe UI',serif;line-height:1.65}
+header{background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:1.5rem}header p{margin:4px 0 0;opacity:.9;font-size:.9rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--bd);display:flex;gap:6px;align-items:center;padding:8px 12px;overflow-x:auto}
+.bar button.t{border:1px solid var(--bd);background:var(--soft);color:var(--tx);border-radius:20px;padding:6px 12px;cursor:pointer;white-space:nowrap;font:inherit;font-size:.85rem}
+.bar button.t.on{background:var(--p2);color:#fff;border-color:var(--p2)}
+.prog{height:5px;background:var(--soft)}.prog i{display:block;height:100%;width:0;background:var(--p);transition:width .4s}
+main{max-width:820px;margin:0 auto;padding:16px}
+.sec{display:none;animation:f .4s}.sec.on{display:block}@keyframes f{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:14px 0}
+h2{color:var(--p);margin:.2em 0 .5em}h3{color:var(--p);margin:.2em 0}
+.tag{display:inline-block;background:var(--p);color:#fff;border-radius:6px;padding:2px 9px;font-size:.75rem;font-family:sans-serif}
+.act{border-left:5px solid var(--p2)}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--soft);color:var(--tx);font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--p)}.opt.ok{background:var(--okb);border-color:var(--ok)}.opt.no{background:var(--nob);border-color:var(--no)}
+.fb{display:none;margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--soft);font-size:.95rem}.fb.show{display:block}
+.fb b.g{color:var(--ok)}.fb b.b{color:var(--no)}
+.nav{display:flex;justify-content:space-between;gap:8px;margin:18px 0}
+.btn{background:var(--p);color:#fff;border:0;border-radius:10px;padding:10px 18px;font:inherit;cursor:pointer}
+.btn.alt{background:var(--soft);color:var(--tx);border:1px solid var(--bd)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{padding:7px 11px;border-radius:18px;border:1px solid var(--p2);background:var(--card);color:var(--tx);cursor:pointer;font:inherit;font-size:.9rem}
+.chip.sel{background:var(--p);color:#fff}.chip.done{background:var(--okb);border-color:var(--ok);cursor:default}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:560px){.pair{grid-template-columns:1fr}}
+.slot{min-height:44px;padding:9px;border:2px dashed var(--bd);border-radius:10px;background:var(--soft);font-size:.9rem}
+.slot.ok{border:2px solid var(--ok);background:var(--okb)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}td,th{border:1px solid var(--bd);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--soft)}
+.exp{cursor:pointer}.exp .d{display:none;margin-top:6px;color:var(--mut);font-size:.92rem}.exp.open .d{display:block}
+.score{font-size:2rem;color:var(--p);font-weight:bold}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:20px 10px 30px}
+</style>
+</head>
+<body>
+<header>
+<h1>📖 Menjelajah Dunia Novel</h1>
+<p>Bahasa Indonesia Tingkat Lanjut · Kelas 11 · Fase F</p>
+<p>Menuju Resensi &amp; Kritik Sastra yang Objektif</p>
+</header>
+<div class="bar" id="bar">
+<button class="t on" data-s="0">① Pengantar</button>
+<button class="t" data-s="1">② Hakikat</button>
+<button class="t" data-s="2">③ Struktur &amp; Unsur</button>
+<button class="t" data-s="3">④ Fungsi &amp; Jenis</button>
+<button class="t" data-s="4">⑤ Kaidah Bahasa</button>
+<button class="t" data-s="5">⑥ Evaluasi</button>
+<button class="t" id="snd" style="margin-left:auto">🔊 Suara</button>
+</div>
+<div class="prog"><i id="pb"></i></div>
+<main>
+
+<!-- TAHAP 1 -->
+<section class="sec on" id="s0">
+<span class="tag">TAHAP 1 · PENGANTAR &amp; EKSPLORASI AWAL</span>
+<div class="card">
+<h2>Selamat datang, Pembaca Kritis!</h2>
+<p>Bayangkan dua teman membaca novel yang sama. Yang satu berkata, “Novelnya bagus banget!” Yang lain menulis, “Alurnya rapi, tetapi tokoh pendampingnya kurang tergali; layak dibaca remaja penyuka drama keluarga.” Siapa yang lebih membantu calon pembaca?</p>
+<p><b>Tujuan pembelajaran:</b> kamu mampu menulis <b>resensi atau kritik sastra</b> novel secara objektif, lengkap dengan identitas buku, sinopsis, keunggulan, kekurangan, dan rekomendasi.</p>
+</div>
+<div class="card act" id="i1">
+<span class="tag">Interaksi 1 · Memilih Jawaban</span>
+<p><b>Instruksi:</b> Pilih ulasan yang menurutmu paling membantu calon pembaca.</p>
+<button class="opt" data-c="0">A. “Novel ini keren banget, wajib baca!”</button>
+<button class="opt" data-c="1">B. “Novel ini membosankan, jangan dibaca.”</button>
+<button class="opt" data-c="2">C. “Konflik batin tokoh utama digarap kuat lewat sudut pandang orang pertama, tetapi bagian tengah terasa lambat. Cocok untuk pembaca yang menyukai kisah psikologis.”</button>
+<div class="fb"></div>
+</div>
+<div class="nav"><span></span><button class="btn" onclick="go(1)">Mulai Materi →</button></div>
+</section>
+
+<!-- TAHAP 2 -->
+<section class="sec" id="s1">
+<span class="tag">TAHAP 2 · PENDALAMAN MATERI (1/4)</span>
+<div class="card">
+<h2>Pengertian &amp; Ciri-ciri Novel</h2>
+<p><b>Novel</b> adalah karya sastra prosa fiksi berbentuk panjang yang mengisahkan peristiwa kehidupan tokoh dengan konflik yang berkembang dan kompleks, ditulis dengan imajinasi pengarang namun tetap berpijak pada realitas.</p>
+<p><b>Ciri-ciri:</b> (klik untuk membuka)</p>
+<div class="chips" id="ciri"></div>
+<div class="card exp" id="cd" style="margin:6px 0">Klik salah satu ciri di atas.</div>
+</div>
+<div class="card act" id="i2">
+<span class="tag">Interaksi 2 · Benar / Salah</span>
+<p><b>Instruksi:</b> Tentukan benar atau salah pernyataan berikut. <i>“Karena novel adalah fiksi, isinya sama sekali tidak boleh berkaitan dengan kenyataan.”</i></p>
+<button class="opt" data-c="0">✅ Benar</button>
+<button class="opt" data-c="1">❌ Salah</button>
+<div class="fb"></div>
+</div>
+<div class="nav"><button class="btn alt" onclick="go(0)">← Kembali</button><button class="btn" onclick="go(2)">Lanjut →</button></div>
+</section>
+
+<section class="sec" id="s2">
+<span class="tag">TAHAP 2 · PENDALAMAN MATERI (2/4)</span>
+<div class="card">
+<h2>Struktur Novel</h2>
+<p>Struktur (alur) novel biasanya terdiri atas: <b>abstrak</b> (ringkasan awal, opsional), <b>orientasi</b> (pengenalan tokoh, latar), <b>komplikasi</b> (konflik muncul &amp; meningkat), <b>evaluasi</b> (konflik menuju klimaks), <b>resolusi</b> (penyelesaian), <b>koda</b> (pesan/renungan akhir).</p>
+</div>
+<div class="card act" id="i3">
+<span class="tag">Interaksi 3 · Mengurutkan</span>
+<p><b>Instruksi:</b> Ketuk struktur sesuai urutan yang benar, dari awal hingga akhir.</p>
+<div class="chips" id="ordc"></div>
+<div class="slot" id="ordr">Urutanmu: –</div>
+<button class="btn alt" onclick="resetOrd()" style="margin-top:8px">Ulangi</button>
+<div class="fb"></div>
+</div>
+<div class="card">
+<h2>Unsur-unsur Novel</h2>
+<table>
+<tr><th>Unsur Intrinsik (dari dalam)</th><th>Unsur Ekstrinsik (dari luar)</th></tr>
+<tr><td>Tema, tokoh &amp; penokohan, alur, latar (tempat, waktu, suasana), sudut pandang, gaya bahasa, amanat</td><td>Biografi pengarang, kondisi sosial-budaya, nilai (moral, agama, pendidikan), latar zaman penulisan</td></tr>
+</table>
+</div>
+<div class="card act" id="i4">
+<span class="tag">Interaksi 4 · Menjodohkan</span>
+<p><b>Instruksi:</b> Pilih unsur di kiri, lalu pasangannya di kanan.</p>
+<div class="pair"><div id="ml"></div><div id="mr"></div></div>
+<div class="fb"></div>
+</div>
+<div class="nav"><button class="btn alt" onclick="go(1)">← Kembali</button><button class="btn" onclick="go(3)">Lanjut →</button></div>
+</section>
+
+<section class="sec" id="s3">
+<span class="tag">TAHAP 2 · PENDALAMAN MATERI (3/4)</span>
+<div class="card">
+<h2>Fungsi Novel</h2>
+<p><b>Hiburan</b> (kesenangan estetis), <b>informatif</b> (pengetahuan tentang budaya &amp; zaman), <b>edukatif</b> (nilai moral), <b>refleksi</b> (cermin kehidupan), dan <b>kritik sosial</b>.</p>
+<h2>Jenis-jenis Novel</h2>
+<p>Berdasarkan genre/isi: <b>romantis, sejarah, fantasi, fiksi ilmiah, detektif, psikologis, religi, remaja, sosial-politik</b>. Berdasarkan mutu: <b>novel populer</b> (menghibur, mengikuti selera pasar) dan <b>novel serius/sastra</b> (kedalaman tema dan gagasan).</p>
+</div>
+<div class="card act" id="i5">
+<span class="tag">Interaksi 5 · Studi Kasus Mini</span>
+<p><b>Instruksi:</b> Sebuah novel mengisahkan petani yang kehilangan tanah akibat penggusuran, dengan gambaran ketimpangan sosial yang tajam. Fungsi dan jenis apa yang paling menonjol?</p>
+<button class="opt" data-c="0">A. Hiburan semata; novel romantis</button>
+<button class="opt" data-c="1">B. Kritik sosial dan refleksi; novel sosial-politik</button>
+<button class="opt" data-c="2">C. Informatif tentang teknologi; fiksi ilmiah</button>
+<div class="fb"></div>
+</div>
+<div class="nav"><button class="btn alt" onclick="go(2)">← Kembali</button><button class="btn" onclick="go(4)">Lanjut →</button></div>
+</section>
+
+<section class="sec" id="s4">
+<span class="tag">TAHAP 2 · PENDALAMAN MATERI (4/4)</span>
+<div class="card">
+<h2>Kaidah Kebahasaan Novel &amp; Resensi</h2>
+<p><b>Novel:</b> banyak kalimat bermajas (metafora, personifikasi, hiperbola), dialog, kata-kata deskriptif/konotatif, kalimat tidak langsung, dan kata sifat penggambar suasana.</p>
+<p><b>Resensi/kritik:</b> bahasa <b>objektif dan bernalar</b>—pendapat disertai bukti dari teks. Gunakan kata evaluatif seimbang (misalnya <i>menarik, kuat, kurang, cenderung</i>), hindari ungkapan berlebihan atau serangan pribadi.</p>
+<h3>Kerangka Resensi</h3>
+<table>
+<tr><th>Bagian</th><th>Isi</th></tr>
+<tr><td>Identitas buku</td><td>Judul, pengarang, penerbit, tahun, tebal, harga</td></tr>
+<tr><td>Sinopsis</td><td>Ringkasan tanpa membocorkan akhir</td></tr>
+<tr><td>Keunggulan</td><td>Kekuatan tema, alur, bahasa—dengan bukti</td></tr>
+<tr><td>Kekurangan</td><td>Kelemahan yang jujur dan sopan</td></tr>
+<tr><td>Rekomendasi</td><td>Untuk siapa novel ini layak dibaca</td></tr>
+</table>
+</div>
+<div class="card act" id="i6">
+<span class="tag">Interaksi 6 · Memilih Jawaban</span>
+<p><b>Instruksi:</b> Manakah kalimat kekurangan yang paling objektif?</p>
+<button class="opt" data-c="0">A. “Pengarangnya jelas tidak berbakat.”</button>
+<button class="opt" data-c="1">B. “Bagian tengah terlalu lambat karena deskripsi latar berulang, sehingga ketegangan konflik menurun.”</button>
+<button class="opt" data-c="2">C. “Ceritanya sampah, buang waktu.”</button>
+<div class="fb"></div>
+</div>
+<div class="nav"><button class="btn alt" onclick="go(3)">← Kembali</button><button class="btn" onclick="go(5)">Ke Evaluasi →</button></div>
+</section>
+
+<!-- TAHAP 3 -->
+<section class="sec" id="s5">
+<span class="tag">TAHAP 3 · EVALUASI KONSEP &amp; REFLEKSI</span>
+<div class="card act" id="i7">
+<h2>Studi Kasus Penutup</h2>
+<span class="tag">Interaksi 7 · Menganalisis Kasus</span>
+<p><b>Instruksi:</b> Rani menulis resensi: <i>“Novel ‘Senja di Kota Tua’ karya X sangat luar biasa. Semua tokohnya sempurna dan tidak ada kekurangan sama sekali. Wajib dibeli semua orang!”</i> Apa perbaikan paling tepat?</p>
+<button class="opt" data-c="0">A. Menambah tanda seru agar lebih meyakinkan</button>
+<button class="opt" data-c="1">B. Menambahkan identitas buku, sinopsis, bukti keunggulan dan kekurangan dari teks, serta rekomendasi pembaca yang sesuai</button>
+<button class="opt" data-c="2">C. Menghapus semua pendapat dan hanya menyalin sinopsis penerbit</button>
+<div class="fb"></div>
+</div>
+<div class="card" id="rk" style="display:none">
+<h2>🎉 Rangkuman Pemahaman</h2>
+<p>Skor interaksi benar pada percobaan pertama: <span class="score" id="sc">0</span> / 7</p>
+<p id="msg"></p>
+<ul>
+<li>Novel = prosa fiksi panjang dengan konflik kompleks.</li>
+<li>Unsur intrinsik &amp; ekstrinsik membentuk dan memengaruhi cerita.</li>
+<li>Fungsi dan jenis novel menentukan sudut penilaian.</li>
+<li>Resensi yang baik: lengkap, objektif, berbukti, ditutup rekomendasi.</li>
+</ul>
+<p><b>Refleksi:</b> Novel apa yang pernah kamu baca? Tuliskan satu keunggulan dan satu kekurangannya dengan bukti dari teks. Itu draf resensi pertamamu!</p>
+<button class="btn" onclick="restart()">↻ Ulangi dari Awal</button>
+</div>
+<div class="nav"><button class="btn alt" onclick="go(4)">← Kembali</button><span></span></div>
+</section>
+</main>
+<footer>Dikembangkan oleh <b>Siti Zenab</b> · SMA Negeri 1 Parongpong</footer>
+
+<script>
+var cur=0,sound=true,AC=null,score=0,answered={};
+function beep(ok){if(!sound)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.frequency.value=ok?660:180;o.type=ok?'sine':'sawtooth';g.gain.value=.08;o.start();if(ok)o.frequency.setValueAtTime(880,AC.currentTime+.12);o.stop(AC.currentTime+.25)}catch(e){}}
+function go(n){cur=n;document.querySelectorAll('.sec').forEach(function(s,i){s.classList.toggle('on',i===n)});document.querySelectorAll('.bar .t[data-s]').forEach(function(b){b.classList.toggle('on',+b.dataset.s===n)});document.getElementById('pb').style.width=(n/5*100)+'%';window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.bar .t[data-s]').forEach(function(b){b.onclick=function(){go(+b.dataset.s)}});
+document.getElementById('snd').onclick=function(){sound=!sound;this.textContent=sound?'🔊 Suara':'🔇 Senyap'};
+
+/* multiple-choice engine */
+var Q={
+i1:{c:2,w:["Terlalu umum: tidak ada alasan atau bukti, pembaca tidak tahu apa yang bagus.","Terlalu umum dan subjektif; tanpa alasan, ulasan ini tidak membantu."],r:"Ulasan yang baik menyebut aspek spesifik (tokoh, alur, sudut pandang), menyertai alasan, dan memberi rekomendasi. Inilah ciri resensi objektif yang akan kamu tulis."},
+i2:{c:1,w:["Salah. Novel fiksi, tetapi ia berpijak pada realitas.","Betul, pernyataannya salah."],r:"Novel bersifat imajinatif, namun tema, latar, dan konfliknya kerap terinspirasi realitas sosial. Karena itu unsur ekstrinsik penting dalam kritik."},
+i5:{c:1,w:["Penggusuran dan ketimpangan bukan sekadar hiburan romantis.","Teknologi bukan inti kisah; yang menonjol adalah isu sosial."],r:"Isu sosial yang digarap tajam menandakan fungsi kritik sosial dan refleksi, dengan jenis sosial-politik."},
+i6:{c:1,w:["Menyerang pribadi pengarang, bukan menilai karya.","Kasar dan tanpa alasan; bukan kritik objektif."],r:"Kritik objektif menunjuk bagian karya, menjelaskan sebabnya, dan menyebut dampaknya. Hindari kata kasar atau penilaian pribadi."},
+i7:{c:1,w:["Tanda seru tidak menambah bukti; resensi tetap tidak objektif.","Hanya menyalin sinopsis bukan resensi karena tidak ada penilaian."],r:"Resensi lengkap memuat identitas, sinopsis, keunggulan, kekurangan, dan rekomendasi, semua dengan bukti dari teks."}
+};
+Q.i1.w=[Q.i1.w[0],Q.i1.w[1]];
+function cleanW(q,pick){var a=q.w.slice();var idx=[0,1,2].filter(function(x){return x!==q.c});return q.w[idx.indexOf(pick)]}
+Object.keys(Q).concat([]).forEach(function(id){var el=document.getElementById(id),q=Q[id];el.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){
+ if(answered[id]){return}
+ var p=+b.dataset.c,ok=p===q.c,fb=el.querySelector('.fb');
+ if(ok){answered[id]=1;if(!answered[id+'f'])score++;el.querySelectorAll('.opt').forEach(function(x){x.disabled=true});b.classList.add('ok')}
+ else{b.classList.add('no');answered[id+'f']=1}
+ beep(ok);
+ fb.className='fb show';
+ fb.innerHTML=(ok?'<b class="g">✔ Tepat!</b> ':'<b class="b">✘ Belum tepat.</b> '+(q.w[[0,1,2].filter(function(x){return x!==q.c}).indexOf(p)]||'')+' Coba lagi. ')+(ok?'<br><b>Mengapa?</b> '+q.r:'');
+ if(ok&&id==='i7'){document.getElementById('rk').style.display='block';document.getElementById('sc').textContent=score;document.getElementById('msg').textContent=score>=6?'Luar biasa! Kamu siap menulis resensi.':score>=4?'Bagus! Ulangi materi yang masih ragu, lalu mulai menulis resensi.':'Tetap semangat! Baca ulang materi dan coba lagi.'}
+}})});
+// fix score: count only first-try correct
+(function(){var s=0;Object.keys(Q).forEach(function(id){var el=document.getElementById(id);el.querySelectorAll('.opt').forEach(function(b){var old=b.onclick;b.onclick=function(){var firstTry=!answered[id]&&!answered[id+'f'];var ok=+b.dataset.c===Q[id].c;old();}})})})();
+
+/* ciri-ciri */
+var ciri={"Fiksi":"Berdasarkan imajinasi pengarang walau terinspirasi realitas.","Panjang":"Ceritanya panjang, biasanya puluhan ribu kata dan banyak bab.","Tokoh banyak":"Memuat beberapa tokoh dengan watak yang berkembang.","Konflik kompleks":"Konflik berlapis, tidak hanya satu masalah.","Alur &amp; latar luas":"Rentang waktu dan tempat lebih luas daripada cerpen.","Pesan/amanat":"Mengandung nilai kehidupan yang dapat dipetik."};
+var cc=document.getElementById('ciri');Object.keys(ciri).forEach(function(k){var b=document.createElement('button');b.className='chip';b.innerHTML=k;b.onclick=function(){document.querySelectorAll('#ciri .chip').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');var d=document.getElementById('cd');d.innerHTML='<b>'+k+':</b> '+ciri[k];beep(true)};cc.appendChild(b)});
+
+/* ordering */
+var ordAns=["Abstrak","Orientasi","Komplikasi","Evaluasi","Resolusi","Koda"],ordPick=[];
+function shuffle(a){return a.slice().sort(function(){return Math.random()-.5})}
+function buildOrd(){ordPick=[];var c=document.getElementById('ordc');c.innerHTML='';shuffle(ordAns).forEach(function(t){var b=document.createElement('button');b.className='chip';b.textContent=t;b.onclick=function(){if(b.classList.contains('done'))return;var i=ordPick.length;if(t===ordAns[i]){ordPick.push(t);b.classList.add('done');beep(true);document.getElementById('ordr').textContent='Urutanmu: '+ordPick.join(' → ');var fb=document.querySelector('#i3 .fb');if(ordPick.length===6){document.getElementById('ordr').classList.add('ok');fb.className='fb show';fb.innerHTML='<b class="g">✔ Benar!</b> <br><b>Mengapa?</b> Cerita dibuka dengan pengenalan, konflik muncul lalu memuncak, kemudian diselesaikan dan ditutup dengan renungan. Urutan ini membantu kamu menulis sinopsis tanpa membocorkan akhir.'}else{fb.className='fb'}}else{beep(false);var fb2=document.querySelector('#i3 .fb');fb2.className='fb show';fb2.innerHTML='<b class="b">✘ Belum tepat.</b> Pikirkan: apa yang harus diketahui pembaca lebih dulu sebelum konflik muncul? Coba lagi.'}};c.appendChild(b)});document.getElementById('ordr').textContent='Urutanmu: –';document.getElementById('ordr').classList.remove('ok')}
+function resetOrd(){buildOrd();document.querySelector('#i3 .fb').className='fb'}
+buildOrd();
+
+/* matching */
+var pairs=[["Tema","Gagasan pokok yang mendasari cerita"],["Latar","Tempat, waktu, dan suasana peristiwa"],["Sudut pandang","Posisi pengarang menceritakan kisah"],["Amanat","Pesan moral untuk pembaca"],["Biografi pengarang","Unsur ekstrinsik yang memengaruhi karya"]];
+var selL=null,matched=0;
+(function(){var L=document.getElementById('ml'),R=document.getElementById('mr');pairs.forEach(function(p,i){var b=document.createElement('button');b.className='chip';b.style.margin='3px';b.textContent=p[0];b.dataset.i=i;b.onclick=function(){if(b.classList.contains('done'))return;document.querySelectorAll('#ml .chip').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');selL=i};L.appendChild(b)});
+shuffle(pairs.map(function(p,i){return i})).forEach(function(i){var b=document.createElement('button');b.className='opt';b.textContent=pairs[i][1];b.dataset.i=i;b.onclick=function(){if(selL===null||b.classList.contains('ok'))return;var fb=document.querySelector('#i4 .fb');fb.className='fb show';if(selL===i){b.classList.add('ok');document.querySelector('#ml .chip[data-i="'+i+'"]').className='chip done';beep(true);matched++;selL=null;fb.innerHTML='<b class="g">✔ Cocok!</b> '+pairs[i][0]+' = '+pairs[i][1].toLowerCase()+'.'+(matched===5?'<br><b>Mengapa?</b> Memahami tiap unsur membantu kamu menilai keunggulan dan kekurangan novel secara terarah. Unsur intrinsik berada di dalam teks, sedangkan biografi pengarang berada di luar teks (ekstrinsik).':'')}else{beep(false);fb.innerHTML='<b class="b">✘ Belum cocok.</b> Baca ulang pengertian unsur tersebut, lalu coba pasangan lain.'}};R.appendChild(b)})})();
+
+function restart(){location.reload()}
+</script>
+</body>
+</html>
